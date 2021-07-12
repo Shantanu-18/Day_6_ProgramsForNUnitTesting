@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProgramsForNUnitTesting
 {
-    class vendingMachine
+    public class vendingMachine
     {
         public static void VendingMachine()
         {
@@ -20,21 +20,13 @@ namespace ProgramsForNUnitTesting
                 if (amount >= notes[i])
                 {
                     numOfNotes[i] = amount / notes[i];
-                    amount = amount - notes[i] / numOfNotes[i];
+                    amount = amount - notes[i] * numOfNotes[i];
 
-                }
-            }
-            Console.WriteLine("Take Your change");
-            Console.WriteLine("Notes : Number of Notes");
-            for (int i = 0; i < 8; i++)
-            {
-                if (numOfNotes[i]!=0)
-                {
-                    Console.WriteLine(notes[i] + " : "+ numOfNotes[i]);
-   
+                    Console.WriteLine("Return notes " +notes[i] + " : " + numOfNotes[i]);
                 }
             }
             
+
 
         }
     }
